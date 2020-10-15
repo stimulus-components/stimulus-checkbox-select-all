@@ -106,6 +106,13 @@ $ yarn install
 $ yarn dev
 ```
 
+### Tests
+
+[Jest](https://jestjs.io/) and [Puppeteer](https://github.com/puppeteer/puppeteer) are responsible to test this component:
+```bash
+$ yarn test
+```
+
 ### Linter
 [Prettier](https://prettier.io/) and [ESLint](https://eslint.org/) are responsible to lint and format this component:
 ```bash
