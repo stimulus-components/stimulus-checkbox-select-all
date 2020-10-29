@@ -43,9 +43,6 @@
     "pika:publish": "pika publish --no-2fa",
     "version": "yarn build"
   },
-  "dependencies": {
-    "stimulus": "^1.1.1"
-  },
   "devDependencies": {
     "@babel/core": "7.11.6",
     "@babel/plugin-syntax-class-properties": "7.10.4",
@@ -62,6 +59,10 @@
     "jest-puppeteer": "^4.4.0",
     "prettier-standard": "16.4.1",
     "puppeteer": "^5.3.1",
-    "snowpack": "2.14.0"
+    "snowpack": "2.14.0",
+    "stimulus": "^1.1.1"
+  },
+  "peerDependencies": {
+    "stimulus": "^1.1.1"
   }
 }
