@@ -6,6 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Indeterminate state support
+
+Add `data-target="checkbox-select-all.checkboxAll"` attribute to use it. It's optional.
+```diff
+- <input type="checkbox" data-action="change->checkbox-select-all#toggle" />
++ <input type="checkbox" data-target="checkbox-select-all.checkboxAll" data-action="change->checkbox-select-all#toggle" />
+```
+
 ## [1.0.0] - 2020-10-15
 
 ### Added
