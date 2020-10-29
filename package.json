@@ -1,7 +1,7 @@
 {
   "name": "stimulus-checkbox-select-all",
   "version": "1.0.0",
-  "description": "A Stimulus controller to check/uncheck all checkboxes.",
+  "description": "A Stimulus controller for managing checkbox lists.",
   "repository": "git@github.com:stimulus-components/stimulus-checkbox-select-all.git",
   "author": "Guillaume Briday <guillaumebriday@gmail.com>",
   "license": "MIT",

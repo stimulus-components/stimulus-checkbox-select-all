@@ -9,7 +9,7 @@
 
 ## Getting started
 
-A Stimulus controller to check/uncheck all checkboxes.
+A Stimulus controller for managing checkbox lists.
 
 ## Installation
 
