@@ -1,7 +1,22 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ['checkbox']
+  static targets = ['checkboxAll', 'checkbox']
+
+  connect () {
+    this.refresh = this.refresh.bind(this)
+
+    if (!this.hasCheckboxAllTarget) return
+
+    this.checkboxTargets.forEach(checkbox => checkbox.addEventListener('change', this.refresh))
+    this.refresh()
+  }
+
+  disconnect () {
+    if (!this.hasCheckboxAllTarget) return
+
+    this.checkboxTargets.forEach(checkbox => checkbox.removeEventListener('change', this.refresh))
+  }
 
   toggle (e) {
     e.preventDefault()
@@ -9,5 +24,13 @@ export default class extends Controller {
     this.checkboxTargets.forEach(checkbox => {
       checkbox.checked = e.target.checked
     })
+  }
+
+  refresh () {
+    const checkboxesCount = this.checkboxTargets.length
+    const checkboxesCheckedCount = this.checkboxTargets.filter(checkbox => checkbox.checked).length
+
+    this.checkboxAllTarget.checked = checkboxesCheckedCount > 0
+    this.checkboxAllTarget.indeterminate = checkboxesCheckedCount > 0 && checkboxesCheckedCount < checkboxesCount
   }
 }

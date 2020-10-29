@@ -28,6 +28,44 @@ application.register("checkbox-select-all", CheckboxSelectAll)
 
 ## Usage
 
+### Without Rails
+
+```html
+<table>
+  <tbody>
+    <td class="block">
+      <label>
+        <input type="checkbox" data-target="checkbox-select-all.checkboxAll" data-action="change->checkbox-select-all#toggle" />
+        <span>Select All / Deselect All</span>
+      </label>
+    </td>
+
+    <td class="block">
+      <label>
+        <input type="checkbox" data-target="checkbox-select-all.checkbox" value="1" />
+        <span>Team 1</span>
+      </label>
+    </td>
+
+    <td class="block">
+      <label>
+        <input type="checkbox" data-target="checkbox-select-all.checkbox" checked="checked" value="2" />
+        <span>Team 2</span>
+      </label>
+    </td>
+
+    <td class="block">
+      <label>
+        <input type="checkbox" data-target="checkbox-select-all.checkbox" value="3" />
+        <span>Team 3</span>
+      </label>
+    </td>
+  </tbody>
+</table>
+```
+
+### With Rails
+
 In your models:
 ```ruby
 class User < ApplicationRecord
@@ -66,7 +104,7 @@ In your view:
 ```html
 <%= form_with model: @user, data: { controller: 'checkbox-select-all' } do |f| %>
   <label>
-    <input type="checkbox" data-action="change->checkbox-select-all#toggle" />
+    <input type="checkbox" data-target="checkbox-select-all.checkboxAll" data-action="change->checkbox-select-all#toggle" />
     <span>Select All / Deselect All</span>
   </label>
 
