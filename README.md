@@ -66,13 +66,13 @@ In your view:
 ```html
 <%= form_with model: @user, data: { controller: 'checkbox-select-all' } do |f| %>
   <label>
-    <input type="checkbox" data-action="change->checkbox-select-all#toggle" />
+    <input type="checkbox" data-target="checkbox-select-all.checkboxAll" data-action="change->checkbox-select-all#toggleAll" />
     <span>Select All / Deselect All</span>
   </label>
 
   <%= f.collection_check_boxes :team_ids, Team.all, :id, :name do |b| %>
     <%= b.label do %>
-      <%= b.check_box data: { target: 'checkbox-select-all.checkbox' } %>
+      <%= b.check_box data: { target: 'checkbox-select-all.checkbox', action: 'change->checkbox-select-all#toggle' } %>
       <%= b.text %>
     <% end %>
   <% end %>

@@ -11,8 +11,12 @@ describe('#checkboxSelectAll', () => {
       () => document.querySelectorAll("[data-target='checkbox-select-all.checkbox']:checked").length
     )
 
-    expect(targetsBefore).toBe(0)
+    expect(targetsBefore).toBe(1)
 
+    // Uncheck all
+    await toggleCheckbox.click()
+
+    // Check all
     await toggleCheckbox.click()
 
     const targetsAfter = await page.evaluate(
