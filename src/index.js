@@ -4,10 +4,19 @@ export default class extends Controller {
   static targets = ['checkboxAll', 'checkbox']
 
   connect () {
-    this.toggle()
+    if (!this.hasCheckboxAllTarget) return
+    this.checkboxAllTarget.addEventListener('change', this.toggleAll)
+    ;[...this.checkboxTargets].forEach(checkbox => checkbox.addEventListener('change', this.refresh))
+    this.refresh()
   }
 
-  toggleAll (e) {
+  disconnect () {
+    if (!this.hasCheckboxAllTarget) return
+    this.checkboxAllTarget.removeEventListener('change', this.toggleAll)
+    ;[...this.checkboxTargets].forEach(checkbox => checkbox.removeEventListener('change', this.refresh))
+  }
+
+  toggleAll = e => {
     e.preventDefault()
 
     this.checkboxTargets.forEach(checkbox => {
@@ -15,9 +24,7 @@ export default class extends Controller {
     })
   }
 
-  toggle () {
-    if (!this.hasCheckboxAllTarget) return
-
+  refresh = () => {
     const checkboxesCount = this.checkboxTargets.length
     const checkboxesCheckedCount = this.checkboxTargets.filter(c => c.checked).length
 
