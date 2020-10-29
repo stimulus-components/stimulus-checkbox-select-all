@@ -2,7 +2,17 @@
   "name": "stimulus-checkbox-select-all",
   "version": "1.0.0",
   "description": "A Stimulus controller for managing checkbox lists.",
+  "keywords": [
+    "stimulus",
+    "stimulusjs",
+    "stimulus controller",
+    "checkbox",
+    "checkbox-select-all"
+  ],
   "repository": "git@github.com:stimulus-components/stimulus-checkbox-select-all.git",
+  "bugs": {
+    "url": "https://github.com/stimulus-components/stimulus-checkbox-select-all/issues"
+  },
   "author": "Guillaume Briday <guillaumebriday@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/stimulus-components/stimulus-checkbox-select-all",
