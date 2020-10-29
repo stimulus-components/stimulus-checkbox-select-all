@@ -16,6 +16,9 @@ Add `data-target="checkbox-select-all.checkboxAll"` attribute to use it. It's op
 + <input type="checkbox" data-target="checkbox-select-all.checkboxAll" data-action="change->checkbox-select-all#toggle" />
 ```
 
+### Changed
+- Adding `stimulus` as `peerDependencies`
+
 ## [1.0.0] - 2020-10-15
 
 ### Added
