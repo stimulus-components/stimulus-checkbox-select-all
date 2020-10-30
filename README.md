@@ -35,7 +35,7 @@ application.register("checkbox-select-all", CheckboxSelectAll)
   <tbody>
     <td class="block">
       <label>
-        <input type="checkbox" data-target="checkbox-select-all.checkboxAll" data-action="change->checkbox-select-all#toggle" />
+        <input type="checkbox" data-target="checkbox-select-all.checkboxAll" />
         <span>Select All / Deselect All</span>
       </label>
     </td>
@@ -104,7 +104,7 @@ In your view:
 ```html
 <%= form_with model: @user, data: { controller: 'checkbox-select-all' } do |f| %>
   <label>
-    <input type="checkbox" data-target="checkbox-select-all.checkboxAll" data-action="change->checkbox-select-all#toggle" />
+    <input type="checkbox" data-target="checkbox-select-all.checkboxAll" />
     <span>Select All / Deselect All</span>
   </label>
 
