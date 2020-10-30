@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **Breaking** `data-target="checkbox-select-all.checkboxAll"` is now required.
+- **Breaking** `data-action="change->checkbox-select-all#toggle"` has been be removed.
+```diff
+- <input type="checkbox" data-action="change->checkbox-select-all#toggle" />
++ <input type="checkbox" data-target="checkbox-select-all.checkboxAll" />
+```
+
 ## [1.1.0] - 2020-10-29
 
 ### Added
