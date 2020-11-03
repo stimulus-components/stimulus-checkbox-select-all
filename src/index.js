@@ -33,9 +33,17 @@ export default class extends Controller {
 
   refresh () {
     const checkboxesCount = this.checkboxTargets.length
-    const checkboxesCheckedCount = this.checkboxTargets.filter(checkbox => checkbox.checked).length
+    const checkboxesCheckedCount = this.checked.length
 
     this.checkboxAllTarget.checked = checkboxesCheckedCount > 0
     this.checkboxAllTarget.indeterminate = checkboxesCheckedCount > 0 && checkboxesCheckedCount < checkboxesCount
+  }
+
+  get checked() {
+    return this.checkboxTargets.filter(checkbox => checkbox.checked)
+  }
+
+  get unchecked() {
+    return this.checkboxTargets.filter(checkbox => !checkbox.checked)
   }
 }
