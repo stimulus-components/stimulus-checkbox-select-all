@@ -39,11 +39,11 @@ export default class extends Controller {
     this.checkboxAllTarget.indeterminate = checkboxesCheckedCount > 0 && checkboxesCheckedCount < checkboxesCount
   }
 
-  get checked() {
+  get checked () {
     return this.checkboxTargets.filter(checkbox => checkbox.checked)
   }
 
-  get unchecked() {
+  get unchecked () {
     return this.checkboxTargets.filter(checkbox => !checkbox.checked)
   }
 }
