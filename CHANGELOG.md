@@ -6,6 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.0] - 2020-11-03
+
+### Added
+
+- Adding `checked` and `unchecked` getters.
+
+## [2.0.0] - 2020-10-31
+
 ### Changed
 
 - **Breaking** `data-target="checkbox-select-all.checkboxAll"` is now required.
