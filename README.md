@@ -11,6 +11,12 @@
 
 A Stimulus controller for managing checkbox lists.
 
+## Video Tutorial
+
+[Chris Oliver](https://twitter.com/excid3) from [GoRails](https://gorails.com/) has released a presentation video on how to use this package with a real life example with Ruby on Rails.
+
+👉 Take a look: [Bulk Operations in Rails](https://gorails.com/episodes/bulk-operations-in-rails)
+
 ## Installation
 
 ```bash
