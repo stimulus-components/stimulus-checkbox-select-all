@@ -5,14 +5,14 @@
     <meta name="description" content="A Stimulus controller for managing checkbox lists." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://unpkg.com/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet" />
-    <script src="https://unpkg.com/stimulus@1.1.1/dist/stimulus.umd.js" defer></script>
 
     <title>Stimulus Checkbox Select All</title>
 
     <script type="module" defer>
+      import { Application } from 'stimulus'
       import CheckboxSelectAll from './src/index.js'
 
-      const application = Stimulus.Application.start()
+      const application = Application.start()
       application.register('checkbox-select-all', CheckboxSelectAll)
     </script>
   </head>
