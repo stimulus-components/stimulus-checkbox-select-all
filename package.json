@@ -60,9 +60,9 @@
     "prettier-standard": "16.4.1",
     "puppeteer": "^5.4.1",
     "snowpack": "2.15.1",
-    "stimulus": "^1.1.1"
+    "stimulus": "^2.0.0"
   },
   "peerDependencies": {
-    "stimulus": "^1.1.1"
+    "stimulus": "^2.0.0"
   }
 }
