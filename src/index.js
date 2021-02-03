@@ -26,9 +26,11 @@ export default class extends Controller {
   toggle (e) {
     e.preventDefault()
 
-    this.checkboxTargets.forEach(checkbox => {
-      checkbox.checked = e.target.checked
-    })
+    this.checkboxTargets
+      .filter(c => !c.disabled)
+      .forEach(checkbox => {
+        checkbox.checked = e.target.checked
+      })
   }
 
   refresh () {
