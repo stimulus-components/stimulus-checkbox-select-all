@@ -28,6 +28,7 @@ export default class extends Controller {
 
     this.checkboxTargets.forEach(checkbox => {
       checkbox.checked = e.target.checked
+      this.triggerChangeEvent(checkbox)
     })
   }
 
@@ -37,6 +38,12 @@ export default class extends Controller {
 
     this.checkboxAllTarget.checked = checkboxesCheckedCount > 0
     this.checkboxAllTarget.indeterminate = checkboxesCheckedCount > 0 && checkboxesCheckedCount < checkboxesCount
+  }
+
+  triggerChangeEvent(checkbox) {
+    const event = document.createEvent('HTMLEvents')
+    event.initEvent('change', false, true)
+    checkbox.dispatchEvent(event)
   }
 
   get checked () {
