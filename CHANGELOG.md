@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Chore
+
+- Remove puppeteer for Vanilla Jest
+- Adding new specs
+
 ## [3.0.0] - 2020-12-05
 
 ### Added
