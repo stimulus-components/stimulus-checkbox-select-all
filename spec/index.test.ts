@@ -1,12 +1,12 @@
 import { Application } from 'stimulus'
 import CheckboxSelectAll from '../src/index'
 
-const startStimulus = () => {
+const startStimulus = (): void => {
   const application = Application.start()
   application.register('checkbox-select-all', CheckboxSelectAll)
 }
 
-beforeEach(() => {
+beforeEach((): void => {
   startStimulus()
 
   document.body.innerHTML = `
@@ -20,9 +20,9 @@ beforeEach(() => {
 })
 
 describe('#toggle', () => {
-  it('should select all checkboxes', () => {
-    const toggleCheckbox = document.querySelector('#checkbox-select-all')
-    const targetsBefore = document.querySelectorAll("[data-checkbox-select-all-target='checkbox']:checked")
+  it('should select all checkboxes', (): void => {
+    const toggleCheckbox: HTMLInputElement = document.querySelector('#checkbox-select-all')
+    const targetsBefore: NodeList = document.querySelectorAll("[data-checkbox-select-all-target='checkbox']:checked")
 
     expect(targetsBefore.length).toBe(1)
 
@@ -32,15 +32,15 @@ describe('#toggle', () => {
     // Check all
     toggleCheckbox.click()
 
-    const targetsAfter = document.querySelectorAll("[data-checkbox-select-all-target='checkbox']:checked")
+    const targetsAfter: NodeList = document.querySelectorAll("[data-checkbox-select-all-target='checkbox']:checked")
 
     expect(targetsAfter.length).toBe(3)
   })
 })
 
 describe('#refresh', () => {
-  it('change the checkboxAll state', () => {
-    const toggleCheckbox = document.querySelector('#checkbox-select-all')
+  it('change the checkboxAll state', (): void => {
+    const toggleCheckbox: HTMLInputElement = document.querySelector('#checkbox-select-all')
 
     expect(toggleCheckbox.checked).toBe(true)
     expect(toggleCheckbox.indeterminate).toBe(true)
