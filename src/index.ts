@@ -1,14 +1,18 @@
 import { Controller } from 'stimulus'
 
 export default class extends Controller {
-  static targets = ['checkboxAll', 'checkbox']
+  hasCheckboxAllTarget: boolean
+  checkboxTargets: HTMLInputElement[]
+  checkboxAllTarget: HTMLInputElement
+
+  static targets: string[] = ['checkboxAll', 'checkbox']
 
   initialize () {
     this.toggle = this.toggle.bind(this)
     this.refresh = this.refresh.bind(this)
   }
 
-  connect () {
+  connect (): void {
     if (!this.hasCheckboxAllTarget) return
 
     this.checkboxAllTarget.addEventListener('change', this.toggle)
@@ -16,22 +20,23 @@ export default class extends Controller {
     this.refresh()
   }
 
-  disconnect () {
+  disconnect (): void {
     if (!this.hasCheckboxAllTarget) return
 
     this.checkboxAllTarget.removeEventListener('change', this.toggle)
     this.checkboxTargets.forEach(checkbox => checkbox.removeEventListener('change', this.refresh))
   }
 
-  toggle (e) {
+  toggle (e: Event): void {
     e.preventDefault()
 
     this.checkboxTargets.forEach(checkbox => {
+      // @ts-ignore
       checkbox.checked = e.target.checked
     })
   }
 
-  refresh () {
+  refresh (): void {
     const checkboxesCount = this.checkboxTargets.length
     const checkboxesCheckedCount = this.checked.length
 
@@ -39,11 +44,11 @@ export default class extends Controller {
     this.checkboxAllTarget.indeterminate = checkboxesCheckedCount > 0 && checkboxesCheckedCount < checkboxesCount
   }
 
-  get checked () {
+  get checked (): HTMLInputElement[] {
     return this.checkboxTargets.filter(checkbox => checkbox.checked)
   }
 
-  get unchecked () {
+  get unchecked (): HTMLInputElement[] {
     return this.checkboxTargets.filter(checkbox => !checkbox.checked)
   }
 }

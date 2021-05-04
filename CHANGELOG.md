@@ -10,6 +10,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Remove puppeteer for Vanilla Jest
 - Adding new specs
+- Moving from [Snowpack](https://www.snowpack.dev/) to [Vite](https://github.com/vitejs/vite)
+- Moving to TypeScript
 
 ## [3.0.0] - 2020-12-05
 
