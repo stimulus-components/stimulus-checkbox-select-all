@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Adding new specs
 - Moving from [Snowpack](https://www.snowpack.dev/) to [Vite](https://github.com/vitejs/vite)
 - Moving to TypeScript
+- Upgrading Node to 14.16.1
 
 ## [3.0.0] - 2020-12-05
 
