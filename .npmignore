@@ -7,7 +7,7 @@ netlify.toml
 .node-version
 .eslintrc.js
 src
-specs
+spec
 tsconfig.json
 vite.config.js
 .prettierignore
