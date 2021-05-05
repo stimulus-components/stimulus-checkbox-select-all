@@ -23,7 +23,7 @@
     "format": "prettier-standard  '**/*.{ts,css,html}' --format",
     "lint": "prettier-standard  '**/*.{ts,css,html}' --lint",
     "dev": "vite",
-    "prod": "vite build --config vite.browser.js",
+    "prod": "vite build --config /dev/null",
     "build": "tsc --noEmit && vite build",
     "version": "yarn build",
     "test": "BABEL_ENV=test jest",
