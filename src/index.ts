@@ -44,10 +44,10 @@ export default class extends Controller {
     this.checkboxAllTarget.checked = checkboxesCheckedCount > 0
     this.checkboxAllTarget.indeterminate = checkboxesCheckedCount > 0 && checkboxesCheckedCount < checkboxesCount
   }
-  
+
   triggerInputEvent (checkbox: HTMLInputElement): void {
-    const event = document.createEvent('HTMLEvents')
-    event.initEvent('input', false, true)
+    const event = new Event('input', { bubbles: false, cancelable: true })
+
     checkbox.dispatchEvent(event)
   }
 
