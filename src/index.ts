@@ -33,6 +33,7 @@ export default class extends Controller {
     this.checkboxTargets.forEach(checkbox => {
       // @ts-ignore
       checkbox.checked = e.target.checked
+      this.triggerInputEvent(checkbox)
     })
   }
 
@@ -42,6 +43,12 @@ export default class extends Controller {
 
     this.checkboxAllTarget.checked = checkboxesCheckedCount > 0
     this.checkboxAllTarget.indeterminate = checkboxesCheckedCount > 0 && checkboxesCheckedCount < checkboxesCount
+  }
+  
+  triggerInputEvent (checkbox: HTMLInputElement): void {
+    const event = document.createEvent('HTMLEvents')
+    event.initEvent('input', false, true)
+    checkbox.dispatchEvent(event)
   }
 
   get checked (): HTMLInputElement[] {
