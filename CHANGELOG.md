@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Trigger `input` event on checkboxes when toggled.
+
 ### Chore
 
 - Remove puppeteer for Vanilla Jest
