@@ -1,4 +1,8 @@
-import { Application } from 'stimulus'
+/**
+ * @jest-environment jsdom
+ */
+
+import { Application } from '@hotwired/stimulus'
 import CheckboxSelectAll from '../src/index'
 
 const startStimulus = (): void => {
