@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Chore
 
 - Upgrading workflows
+- Upgrading to Node 16
 
 ## [5.0.0] - 2021-09-28
 
