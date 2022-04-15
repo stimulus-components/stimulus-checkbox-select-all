@@ -1,6 +1,6 @@
 {
   "name": "stimulus-checkbox-select-all",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "A Stimulus controller for managing checkbox lists.",
   "keywords": [
     "stimulus",
