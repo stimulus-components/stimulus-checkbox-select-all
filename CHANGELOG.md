@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Upgrading workflows
 - Upgrading to Node 16
 - Bump dependencies
+- Fixing external Vite config reducing package size from `2.70 KiB` to `0.50 KiB`.
 
 ## [5.0.0] - 2021-09-28
 

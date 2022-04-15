@@ -7,10 +7,10 @@ module.exports = {
       name: 'stimulus-checkbox-select-all'
     },
     rollupOptions: {
-      external: ['stimulus'],
+      external: ['@hotwired/stimulus'],
       output: {
         globals: {
-          stimulus: 'Stimulus'
+          '@hotwired/stimulus': 'Stimulus'
         }
       }
     }
