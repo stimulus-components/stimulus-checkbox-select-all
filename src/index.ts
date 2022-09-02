@@ -43,6 +43,7 @@ export default class extends Controller {
 
     this.checkboxAllTarget.checked = checkboxesCheckedCount > 0
     this.checkboxAllTarget.indeterminate = checkboxesCheckedCount > 0 && checkboxesCheckedCount < checkboxesCount
+    this.triggerInputEvent(this.checkboxAllTarget)
   }
 
   triggerInputEvent (checkbox: HTMLInputElement): void {
