@@ -19,12 +19,32 @@ export default class extends Controller {
     this.checkboxTargets.forEach(checkbox => checkbox.addEventListener('change', this.refresh))
     this.refresh()
   }
+  
+  checkboxTargetConnected(el){
+    el.addEventListener('change', this.refresh)
+    this.refresh();
+  }
+
+  checkboxAllTargetConnected(el){
+    el.addEventListener('change', this.toggle)
+    this.refresh();
+  }
 
   disconnect (): void {
     if (!this.hasCheckboxAllTarget) return
 
     this.checkboxAllTarget.removeEventListener('change', this.toggle)
     this.checkboxTargets.forEach(checkbox => checkbox.removeEventListener('change', this.refresh))
+  }
+
+  checkboxTargetDisconnected(el){
+    el.removeEventListener('change', this.refresh)
+    this.refresh();
+  }
+
+  checkboxAllTargetDisconnected(el){
+    el.removeEventListener('change', this.toggle)
+    this.refresh();
   }
 
   toggle (e: Event): void {
