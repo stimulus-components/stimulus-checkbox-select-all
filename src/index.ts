@@ -12,39 +12,28 @@ export default class extends Controller {
     this.refresh = this.refresh.bind(this)
   }
 
-  connect (): void {
-    if (!this.hasCheckboxAllTarget) return
+  checkboxAllTargetConnected (checkbox: HTMLInputElement): void {
+    checkbox.addEventListener('change', this.toggle)
 
-    this.checkboxAllTarget.addEventListener('change', this.toggle)
-    this.checkboxTargets.forEach(checkbox => checkbox.addEventListener('change', this.refresh))
     this.refresh()
   }
-  
-  checkboxTargetConnected(el){
-    el.addEventListener('change', this.refresh)
-    this.refresh();
+
+  checkboxTargetConnected (checkbox: HTMLInputElement): void {
+    checkbox.addEventListener('change', this.refresh)
+
+    this.refresh()
   }
 
-  checkboxAllTargetConnected(el){
-    el.addEventListener('change', this.toggle)
-    this.refresh();
+  checkboxAllTargetDisconnected (checkbox: HTMLInputElement): void {
+    checkbox.removeEventListener('change', this.toggle)
+
+    this.refresh()
   }
 
-  disconnect (): void {
-    if (!this.hasCheckboxAllTarget) return
+  checkboxTargetDisconnected (checkbox: HTMLInputElement): void {
+    checkbox.removeEventListener('change', this.refresh)
 
-    this.checkboxAllTarget.removeEventListener('change', this.toggle)
-    this.checkboxTargets.forEach(checkbox => checkbox.removeEventListener('change', this.refresh))
-  }
-
-  checkboxTargetDisconnected(el){
-    el.removeEventListener('change', this.refresh)
-    this.refresh();
-  }
-
-  checkboxAllTargetDisconnected(el){
-    el.removeEventListener('change', this.toggle)
-    this.refresh();
+    this.refresh()
   }
 
   toggle (e: Event): void {

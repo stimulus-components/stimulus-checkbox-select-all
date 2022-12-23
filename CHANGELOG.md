@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Chore
+
+- Using new Stimulus lifecycle callbacks to make the controller function properly when checkbox checkboxAll targets are dynamically added and/or removed from the DOM. (https://github.com/stimulus-components/stimulus-checkbox-select-all/pull/19)
+
 ## [5.1.0] - 2022-04-15
 
 ### Chore
