@@ -1,18 +1,26 @@
-const path = require('path')
+import { resolve } from 'path'
+import { defineConfig } from 'vite'
 
-module.exports = {
-  build: {
-    lib: {
-      entry: path.resolve(__dirname, 'src/index.ts'),
-      name: 'stimulus-checkbox-select-all'
-    },
-    rollupOptions: {
-      external: ['@hotwired/stimulus'],
-      output: {
-        globals: {
-          '@hotwired/stimulus': 'Stimulus'
+export default defineConfig(({ mode }) => {
+  if (mode === 'netlify') {
+    return {}
+  }
+
+  return {
+    build: {
+      lib: {
+        entry: resolve(__dirname, 'src/index.ts'),
+        name: 'StimulusCheckboxSelectAll',
+        fileName: 'stimulus-checkbox-select-all'
+      },
+      rollupOptions: {
+        external: ['@hotwired/stimulus'],
+        output: {
+          globals: {
+            '@hotwired/stimulus': 'Stimulus'
+          }
         }
       }
     }
   }
-}
+})
