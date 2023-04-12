@@ -5,5 +5,11 @@
     "types": ["vite/client", "jest"],
     "skipLibCheck": true,
     "moduleResolution": "node"
-  }
+  },
+  "exclude": [
+    "dist"
+  ],
+  "include": [
+    "src/**/*"
+  ]
 }

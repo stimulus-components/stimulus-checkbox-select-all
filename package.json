@@ -19,12 +19,13 @@
   "private": false,
   "main": "dist/stimulus-checkbox-select-all.umd.js",
   "module": "dist/stimulus-checkbox-select-all.mjs",
+  "types": "index.d.ts",
   "scripts": {
     "format": "prettier-standard  '**/*.{ts,css,html}' --format",
     "lint": "prettier-standard  '**/*.{ts,css,html}' --lint",
     "dev": "vite",
     "prod": "vite build --mode netlify",
-    "build": "tsc --noEmit && vite build",
+    "build": "tsc --noEmit false --declaration true --emitDeclarationOnly true --outDir . && vite build",
     "version": "yarn build",
     "test": "BABEL_ENV=test jest",
     "np": "np --no-2fa"
