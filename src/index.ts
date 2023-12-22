@@ -39,7 +39,7 @@ export default class extends Controller {
   toggle (e: Event): void {
     e.preventDefault()
 
-    this.checkboxTargets.forEach(checkbox => {
+    this.checkboxTargets.forEach((checkbox) => {
       // @ts-ignore
       checkbox.checked = e.target.checked
       this.triggerInputEvent(checkbox)
@@ -61,10 +61,10 @@ export default class extends Controller {
   }
 
   get checked (): HTMLInputElement[] {
-    return this.checkboxTargets.filter(checkbox => checkbox.checked)
+    return this.checkboxTargets.filter((checkbox) => checkbox.checked)
   }
 
   get unchecked (): HTMLInputElement[] {
-    return this.checkboxTargets.filter(checkbox => !checkbox.checked)
+    return this.checkboxTargets.filter((checkbox) => !checkbox.checked)
   }
 }
