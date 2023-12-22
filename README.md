@@ -12,7 +12,7 @@ A Stimulus controller for managing checkbox lists.
 
 ## 📚 Documentation
 
-See [stimulus-checkbox-select-all documentation](https://stimulus-components.netlify.app/docs/components/stimulus-checkbox-select-all/).
+See [stimulus-checkbox-select-all documentation](https://www.stimulus-components.com/docs/stimulus-checkbox-select-all/).
 
 ## 👷‍♂️ Contributing
 
