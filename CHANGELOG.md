@@ -6,9 +6,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [5.3.0] - 2023-12-22
+
 ### Chore
 
 - Bump dependencies.
+- Add type declaration file `index.d.ts`.
 
 ## [5.2.0] - 2022-12-23
 
