@@ -2,12 +2,12 @@
  * @jest-environment jsdom
  */
 
-import { Application } from '@hotwired/stimulus'
-import CheckboxSelectAll from '../src/index'
+import { Application } from "@hotwired/stimulus"
+import CheckboxSelectAll from "../src/index"
 
 const startStimulus = (): void => {
   const application = Application.start()
-  application.register('checkbox-select-all', CheckboxSelectAll)
+  application.register("checkbox-select-all", CheckboxSelectAll)
 }
 
 beforeEach((): void => {
@@ -23,9 +23,9 @@ beforeEach((): void => {
   `
 })
 
-describe('#toggle', () => {
-  it('should select all checkboxes', (): void => {
-    const toggleCheckbox: HTMLInputElement = document.querySelector('#checkbox-select-all')
+describe("#toggle", () => {
+  it("should select all checkboxes", (): void => {
+    const toggleCheckbox: HTMLInputElement = document.querySelector("#checkbox-select-all")
     const targetsBefore: NodeList = document.querySelectorAll("[data-checkbox-select-all-target='checkbox']:checked")
 
     expect(targetsBefore.length).toBe(1)
@@ -42,9 +42,9 @@ describe('#toggle', () => {
   })
 })
 
-describe('#refresh', () => {
-  it('change the checkboxAll state', (): void => {
-    const toggleCheckbox: HTMLInputElement = document.querySelector('#checkbox-select-all')
+describe("#refresh", () => {
+  it("change the checkboxAll state", (): void => {
+    const toggleCheckbox: HTMLInputElement = document.querySelector("#checkbox-select-all")
 
     expect(toggleCheckbox.checked).toBe(true)
     expect(toggleCheckbox.indeterminate).toBe(true)

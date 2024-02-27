@@ -1,15 +1,8 @@
 {
   "compilerOptions": {
     "lib": ["dom", "es6"],
-    "target": "ES6",
-    "types": ["vite/client", "jest"],
-    "skipLibCheck": true,
-    "moduleResolution": "node"
+    "types": ["vite/client"],
+    "skipLibCheck": true
   },
-  "exclude": [
-    "dist"
-  ],
-  "include": [
-    "src/**/*"
-  ]
+  "exclude": ["node_modules", "spec", "jest"]
 }

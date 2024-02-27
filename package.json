@@ -1,5 +1,5 @@
 {
-  "name": "stimulus-checkbox-select-all",
+  "name": "@stimulus-components/checkbox-select-all",
   "version": "5.3.0",
   "description": "A Stimulus controller for managing checkbox lists.",
   "keywords": [
@@ -17,49 +17,57 @@
   "license": "MIT",
   "homepage": "https://github.com/stimulus-components/stimulus-checkbox-select-all",
   "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
   "main": "dist/stimulus-checkbox-select-all.umd.js",
   "module": "dist/stimulus-checkbox-select-all.mjs",
-  "types": "index.d.ts",
+  "types": "dist/types/index.d.ts",
   "scripts": {
-    "format": "prettier-standard  '**/*.{ts,css,html}' --format",
-    "lint": "prettier-standard  '**/*.{ts,css,html}' --lint",
+    "lint": "tsc --noEmit && eslint --ext .js,.mjs,.ts . && prettier . --check",
+    "lintfix": "eslint --ext .js,.mjs,.ts . --fix && prettier . --write",
+    "types": "tsc --noEmit false --declaration true --emitDeclarationOnly true --outDir dist/types",
     "dev": "vite",
     "prod": "vite build --mode netlify",
-    "build": "tsc --noEmit false --declaration true --emitDeclarationOnly true --outDir . && vite build",
+    "build": "vite build && yarn types",
     "version": "yarn build",
     "test": "BABEL_ENV=test jest",
     "np": "np --no-2fa"
   },
   "devDependencies": {
-    "@babel/core": "7.23.6",
-    "@babel/plugin-proposal-class-properties": "^7.18.6",
-    "@babel/plugin-syntax-class-properties": "^7.12.13",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "7.23.6",
-    "@babel/preset-typescript": "^7.23.3",
-    "@hotwired/stimulus": "^3.2.2",
-    "@types/jest": "^29.5.11",
-    "autoprefixer": "^10.4.16",
-    "babel-jest": "^29.7.0",
+    "@babel/core": "7.23.9",
+    "@babel/polyfill": "7.12.1",
+    "@babel/preset-env": "7.23.9",
+    "@babel/preset-typescript": "7.23.3",
+    "@hotwired/stimulus": "^3",
+    "@types/jest": "^29.5.12",
+    "@typescript-eslint/eslint-plugin": "^7.0.2",
+    "@typescript-eslint/parser": "^7.0.2",
+    "autoprefixer": "10.4.17",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-config-standard": "17.1.0",
+    "eslint-plugin-import": "2.29.1",
+    "eslint-plugin-n": "16.6.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-standard": "5.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "mutationobserver-shim": "^0.3.7",
-    "np": "^9.2.0",
-    "postcss": "^8.4.32",
-    "prettier-standard": "16.4.1",
-    "tailwindcss": "^3.4.0",
+    "np": "9.2.0",
+    "postcss": "8.4.35",
+    "prettier": "3.2.5",
+    "tailwindcss": "3.4.1",
     "typescript": "^5.3.3",
-    "vite": "^5.0.10"
+    "vite": "5.1.4"
   },
   "peerDependencies": {
-    "@hotwired/stimulus": "^3.2.1"
+    "@hotwired/stimulus": "^3.0.0"
   },
   "jest": {
     "setupFiles": [
       "<rootDir>/jest/jest-setup.ts"
     ]
-  },
-  "resolutions": {
-    "prettierx": "~0.19.0"
   }
 }

@@ -1,2 +1,2 @@
-import '@babel/polyfill'
-import 'mutationobserver-shim'
+import "@babel/polyfill"
+import "mutationobserver-shim"
